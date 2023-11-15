@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-11T19:01:17+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Home</title><entry><title type="html">Feature Engineering vs Feature Selection</title><link href="http://localhost:4000/2019/12/20/fe-vs-fs.html" rel="alternate" type="text/html" title="Feature Engineering vs Feature Selection" /><published>2019-12-20T00:00:00+01:00</published><updated>2019-12-20T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/20/fe-vs-fs</id><content type="html" xml:base="http://localhost:4000/2019/12/20/fe-vs-fs.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Feature Engineering vs Feature Selection&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Feature Engineering / Feature Extraction&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Feature engineering involves possible changes in the available features. For example, one could want to create non linear 
+features from a feature &lt;em&gt;f&lt;/em&gt; available in the dataset. Other features such as : &lt;em&gt;sin(f), cos(f), tan(f), log(f), e&lt;sup&gt;f&lt;/sup&gt;&lt;/em&gt; etc. could be
+generated from it.&lt;/p&gt;
+
+    &lt;p&gt;Also multiple features can be combined to form new features. For instance :&lt;br /&gt;
+&lt;em&gt;f = f&lt;sub&gt;1&lt;/sub&gt; + f&lt;sub&gt;2&lt;/sub&gt; + f&lt;sub&gt;3&lt;/sub&gt;&lt;/em&gt; &lt;br /&gt;
+&lt;em&gt;f = f&lt;sub&gt;1&lt;/sub&gt; ∗ f&lt;sub&gt;2&lt;/sub&gt;&lt;/em&gt; &lt;br /&gt;&lt;/p&gt;
+
+    &lt;p&gt;Feature extraction approaches project features into a new feature space and the
+&lt;span style=&quot;color:green&quot;&gt; newly constructed features are usually combinations of original features&lt;/span&gt;. Examples of feature extraction techniques include &lt;span style=&quot;color:blue&quot;&gt;Principal Component Analysis (PCA), Linear Discriminant Analysis (LDA) and Canonical Correlation Analysis
+(CCA)&lt;/span&gt; &lt;sup&gt;[1]&lt;/sup&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Feature (subset) Selection&lt;/strong&gt;
+Feature selection refers to finding a subset of the original features of a dataset,
+such that an induction algorithm that is run on data containing only these features generates a classifier with the highest possible accuracy &lt;sup&gt;[2]&lt;/sup&gt; .&lt;/p&gt;
+
+    &lt;p&gt;The selection criterion may not always be based on maximizing accuracy, as is noted by Liu et al. &lt;sup&gt;[3]&lt;/sup&gt; Their definition involves evaluating and comparing candidate subsets according to a certain evaluation criterion, till a given stopping criterion is reached. Then the selected best subset usually needs to be validated
+by prior knowledge or different tests via synthetic and/or real-world data sets &lt;sup&gt;[3]&lt;/sup&gt; .
+Feature selection approaches aim to select a small subset of features that minimize redundancy and maximize relevance to the target such as the class labels
+in classification. Representative feature selection techniques include &lt;span style=&quot;color:blue&quot;&gt;Information
+Gain, Relief, Fisher Score and Lasso&lt;/span&gt; &lt;sup&gt;[1]&lt;/sup&gt; . In feature selection, we &lt;span style=&quot;color:green&quot;&gt;do not combine features, nor do we make new features from an existing set of available features&lt;/span&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As noted by Aleyani et al. &lt;sup&gt;[4]&lt;/sup&gt; , both approaches are capable of improving learning performance, lowering computational complexity, building better generalizable models
+and decreasing required storage. However, &lt;strong&gt;feature selection is superior in terms of
+better readability and interpretability since it maintains the original feature values
+in the reduced space while feature extraction transforms the data from the original
+space into a new space, which cannot be linked to the features in the original space.Therefore, further analysis of the new space is problematic since there is no physical meaning 
+for the transformed features obtained from feature extraction technique&lt;/strong&gt; &lt;sup&gt;[4]&lt;/sup&gt; .&lt;/p&gt;
+
+&lt;p&gt;References :&lt;/p&gt;
+
+&lt;p&gt;[1] Jiliang Tang, Salem Alelyani and Huan Liu &lt;em&gt;Feature Selection for Classification: A Review&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[2] Ron Kohavi, George H. John &lt;em&gt;Wrappers for feature subset selection, Artificial Intelligence 97 ( 1997) 273-324&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[3] Huan Liu and Lei Yu &lt;em&gt;Toward Integrating Feature Selection Algorithms for Classification and Clustering&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[4] Salem Alelyani, Jiliang Tang and Huan Liu &lt;em&gt;Feature Selection for Clustering: A Review&lt;/em&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Types of Feature Selection Methods</title><link href="http://localhost:4000/2019/12/20/fs-methods-types.html" rel="alternate" type="text/html" title="Types of Feature Selection Methods" /><published>2019-12-20T00:00:00+01:00</published><updated>2019-12-20T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/20/fs-methods-types</id><content type="html" xml:base="http://localhost:4000/2019/12/20/fs-methods-types.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Types of Feature Selection Methods&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There are many types of feature selection methods. They are mainly put into three
+categories &lt;sup&gt;[1] [2]&lt;/sup&gt; :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Filter methods :&lt;/strong&gt; These techniques &lt;strong&gt;assign scores or rankings to available features independent of the classification method used&lt;/strong&gt;. They rely on the intrinsic
+properties of the data to evaluate the features. In many instances, relevance
+scores are calculated and features with low scores are removed&lt;sup&gt;[5]&lt;/sup&gt;.
+Advantages include that filter methods are &lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;easily scalable to high dimensional datasets and need to be performed only once&lt;/strong&gt;&lt;/span&gt; &lt;sup&gt;[5]&lt;/sup&gt; . 
+ Disadvantages include   the fact that the results of a filter method &lt;span style=&quot;color:red&quot;&gt;&lt;strong&gt;may not be the most optimal for the classifier model being used later&lt;/strong&gt;&lt;/span&gt;. 
+ Also, many filter methods   are  &lt;span style=&quot;color:red&quot;&gt;&lt;strong&gt;univariate, which means they ignore feature dependencies&lt;/strong&gt;&lt;/span&gt; &lt;sup&gt;[5]&lt;/sup&gt; .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Wrapper methods :&lt;/strong&gt;  The quality of a feature subset is evaluated by an induction algorithm. For classification tasks, this could be a classifier like Decision Tree. A feature subset is generated, fed into the classifier and metrics are recorded (eg accuracy). Another subset is taken and it is fed again into the classifier. The feature subset with the highest performance is considered to be the
+optimal subset and the resulting model is considered the final model &lt;sup&gt;[3]&lt;/sup&gt; .&lt;/p&gt;
+
+    &lt;p&gt;Wrapper methods couple feature selection with the predefined classification model
+and therefore the selected subset of features is inevitably biased to the predefined classifier &lt;sup&gt;[3]&lt;/sup&gt; .&lt;/p&gt;
+
+    &lt;p&gt;Wrapper methods &lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;usually give better metrics (eg accuracy) than filter methods &lt;sup&gt;[1] [3]&lt;/sup&gt; for that classifier since we aim to select a subset that maximises the quality for this classifier&lt;/strong&gt;&lt;/span&gt;. This could also be considered a drawback of wrapper methods, since they have a &lt;span style=&quot;color:red&quot;&gt;&lt;strong&gt;higher risk of overfitting than filter techniques&lt;/strong&gt;&lt;span&gt; &lt;sup&gt;[5]&lt;/sup&gt; .&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+    &lt;p&gt;Also, the &lt;span style=&quot;color:red&quot;&gt;&lt;strong&gt;final selected subset may not be the most optimal when tested over another classifier&lt;/strong&gt;&lt;/span&gt;. 
+The number of all possible subsets which could be generated for a given number of initial features &lt;span style=&quot;color:red&quot;&gt;&lt;strong&gt;grows exponentially with the number of features&lt;/strong&gt;&lt;/span&gt;. 
+This leads to wrapper methods being more&lt;span style=&quot;color:red&quot;&gt; &lt;strong&gt;computationally expensive and time consuming&lt;/strong&gt;&lt;span&gt;&lt;/span&gt;. The situation gets worse if building the classifier itself has a high computational cost &lt;sup&gt;[5]&lt;/sup&gt; .&lt;/span&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Hybrid methods :&lt;/strong&gt;  These approaches use some &lt;strong&gt;combination of filter and wrapper methods&lt;/strong&gt;, to decrease the computational complexity of feature selection. 
+Usually feature subsets are generated through some filter methods and then the
+subset quality is assessed using a classifier. Rather than using the classifier for
+every possible subset, some strategy is applied to decide which subsets should be
+tested. Liu et. al &lt;sup&gt;[4]&lt;/sup&gt; suggest running some filter method over subsets of a given
+cardinality and the highest ranked feature subset is then fed into a classifier.The classifier only runs for a 
+maximum number of available features times, since
+that is the highest cardinality that can be achieved for the feature subsets.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;References :&lt;/p&gt;
+
+&lt;p&gt;[1] Ron Kohavi, George H. John &lt;em&gt;Wrappers for feature subset selection&lt;/em&gt;, Artificial
+Intelligence 97 ( 1997) 273-324&lt;/p&gt;
+
+&lt;p&gt;[2] Avrim L. Blum, Pat Langley &lt;em&gt;Selection of relevant features and examples in machine learning&lt;/em&gt;, Artificial Intelligence 97 ( 1997) 245-271&lt;/p&gt;
+
+&lt;p&gt;[3] Jiliang Tang, Salem Alelyani and Huan Liu &lt;em&gt;Feature Selection for Classification: A Review&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[4] Huan Liu and Lei Yu &lt;em&gt;Toward Integrating Feature Selection Algorithms for Classification and Clustering&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[5] Yvan Saeys, Iñaki Inza, Pedro Larrañaga &lt;em&gt;A review of feature selection techniques in bioinformatics&lt;/em&gt;. Bioinformatics, Volume 23, Issue 19, 1 October 2007, Pages
+2507–2517&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Challenges in obtaining medical data</title><link href="http://localhost:4000/2019/12/08/medical-data-challenges.html" rel="alternate" type="text/html" title="Challenges in obtaining medical data" /><published>2019-12-08T00:00:00+01:00</published><updated>2019-12-08T00:00:00+01:00</updated><id>http://localhost:4000/2019/12/08/medical-data-challenges</id><content type="html" xml:base="http://localhost:4000/2019/12/08/medical-data-challenges.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;Machine learning models rely on the training data provided. The algorithms learn from the examples available. 
+It generally requires a lot of training data to develop models that are reliable and generalisable.
+The following are some of the challenges associated with getting workable data for
+medical projects :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Unavailability of data&lt;/strong&gt;&lt;/span&gt; : While it is comparatively easier to get training data for some applications of machine learning,
+that is not the case for medical data. As an example, ImageNet &lt;sup&gt;[1]&lt;/sup&gt; , one of the largest available image datasets, which is also the
+basis of image classification benchmarking as a result of the ILSVRC challenges,
+has 14,197,122 available images &lt;sup&gt;[2]&lt;/sup&gt; .
+Similarly, for studying text data, corpus could be generated from Wikipedia,
+Twitter and publicly available news articles and texts. But getting medical
+records of this magnitude is challenging. Gaining access to real world data, including EHR comes with its own set of issues.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Lack of digitization in hospitals&lt;/strong&gt;&lt;/span&gt; : There is a continued push towards making hospitals digital and using electronic health records (EHRs), with the main
+reasons in its favour being :&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;transparency&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;less medical errors due to illegibility or loss of written records&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;convenience to medical professionals with providing real time availability of
+old patient records&lt;sup&gt;[6][5]&lt;/sup&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As per the American Hospital Association survey from 2009&lt;sup&gt;[3]&lt;/sup&gt; :&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;On the basis of responses from 63.1% of hospitals surveyed, only 1.5% of U.S.
+hospitals have a comprehensive electronic-records system (i.e., present in all clin-
+ical units), and an additional 7.6% have a basic system (i.e., present in at least
+one clinical unit). Computerized provider-order entry for medications has been
+implemented in only 17% of hospitals. Larger hospitals, those located in urban
+areas, and teaching hospitals were more likely to have electronic-records systems.
+Respondents cited capital requirements and high maintenance costs as the primary barriers to implementation…..&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The above numbers have significantly improved in the US after the HITECH
+Act, but there are still issues as cited by Colligan et. al. &lt;sup&gt;[4]&lt;/sup&gt; which leave hospitals
+dissatisfied with the EHR adoption and uses.
+It is also to be noted that while USA has been largely successful in increasing
+EHR usage among hospitals, so is not the case for most other countries. Many
+hospitals around the world still do not use EHR extensively and a lot of work
+in hospitals still happens on paper with little or no digitisation, with costs of
+setting up a digital system and amount of time and money needed to be spent in
+training the employees being a major barrier.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Privacy&lt;/strong&gt;&lt;/span&gt; : Even when hospitals do have electronic health data, it cannot be
+made publicly available or handed over to researchers easily. Proper licensing
+systems and guidelines need to be in place. It needs to be anonymised by the
+hospitals to ensure complete anonymity and privacy of patients &lt;sup&gt;[7]&lt;/sup&gt;. HIPAA and
+recently GDPR have put regulations in place regarding handling of personally
+identifiable information which need to be respected, often leading to additional
+layer of complexity before preparing data to be made available outside hospitals.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Challenges in data merging&lt;/strong&gt;&lt;/span&gt; : When comparing and/or merging medical
+data from different sources, we may encounter following issues :&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Language differences&lt;/strong&gt;&lt;/span&gt; : If sources of data are from countries/ hospitals
+with different local languages, the terminologies may be different and it
+could take some time and data processing to ensure that correct values are
+being mapped to correct feature names.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Convention differences&lt;/strong&gt; &lt;/span&gt;: As an example, while in one place, it may be
+usual to save body and weight separately, in other case, saving BMI and
+weight may be the norm. Relevant decoupling and variable generation may
+be required.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Differences in physical units&lt;/strong&gt; &lt;/span&gt;: Different hospitals may follow different
+physical units. For instance, while Europe mainly follows the metric system,
+USA follows the United States Customary System (USCS) where in place
+of kilograms, pounds may be used while recording weights for the patients.
+Similarly for temperature, either Celsius or Fahrenheit may be used.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Different standardisations&lt;/strong&gt; &lt;/span&gt;: Even when using standardisation conven-
+tions, a situation may arise that some data could be from an older time, or
+the hospital record system has not yet updated to a more recent standard.
+For instance, MIMIC-III dataset from the USA follows the ICD-9 &lt;sup&gt;[8]&lt;/sup&gt; sys-
+tem, while ICCA database from Uniklinik Aachen follows the ICD-10 sys-
+tem &lt;sup&gt;[10] [9]&lt;/sup&gt;. Even within the same ICD-x system, different revisions may be
+followed, and before continuing with data merging or any modeling, these
+need to be standardised.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;&lt;strong&gt;Different privacy standards&lt;/strong&gt; &lt;/span&gt;: Different hospitals may come under different privacy laws, meaning some data/features may be intentionally withheld
+from the provided dataset which renders that feature unusable, even if it is
+available in other datasets.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:blue&quot;&gt;&lt;strong&gt;Bias&lt;/strong&gt;&lt;/span&gt; : Like all scientific studies, one needs to ensure that the data made available to a model is representative of the population over which it will be deployed
+and is not biased. [More on this topic in another post.]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;References :&lt;/p&gt;
+
+&lt;p&gt;[1] Deng et. al &lt;em&gt;ImageNet: A Large-Scale Hierarchical Image Database. CVPR, 2009&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[2] &lt;code class=&quot;highlighter-rouge&quot;&gt;http://image-net.org/about-stats&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[3] Jha et.al &lt;em&gt;Use of Electronic Health Records in U.S. Hospitals, The New England
+Journal of medicine, 2009&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[4] Colligan et. al. American Medical Association &lt;em&gt;Sources of physician satisfaction
+and dissatisfaction and review of administrative tasks in ambulatory practice: A
+qualitative analysis of physician and staff interviews.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[5] Linda T. Kohn, Janet M. Corrigan, and Molla S. Donaldson &lt;em&gt;To Err Is Human:
+Building a Safer Health System (1999)&lt;/em&gt;.Committee on Quality of Health Care in
+America, Institute of Medicine, National Academy Press, Washington, D.C.&lt;/p&gt;
+
+&lt;p&gt;[6] HIMSS Electronic Health Record Committee &lt;em&gt;EHR Definition, Attributes and
+Essential Requirements Version 1.0&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;[7] &lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.legislation.gov.au/Details/C2012A00063&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[8] International Classification of Diseases,Ninth Revision (ICD-9) &lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.cdc.gov/nchs/icd/icd9.htm&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[9] ICD-10 versions on the WHO website
+&lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.who.int/classifications/icd/icdonlineversions/en/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[10] ICD-10 on CDC website &lt;code class=&quot;highlighter-rouge&quot;&gt;https://www.cdc.gov/nchs/icd/icd10cm.htm&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Masters thesis topic introduction</title><link href="http://localhost:4000/2019/11/25/thesis-intro.html" rel="alternate" type="text/html" title="Masters thesis topic introduction" /><published>2019-11-25T00:00:00+01:00</published><updated>2019-11-25T00:00:00+01:00</updated><id>http://localhost:4000/2019/11/25/thesis-intro</id><content type="html" xml:base="http://localhost:4000/2019/11/25/thesis-intro.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Feature Selection for patient population discrimination&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The thesis aims to develop a general machine-learning-based classification framework to investigate the heterogeneity between two ICU patient populations that have common data variables. The data variables are transformed into a feature set whose subsets are input to various binary classifiers in order to predict the population data source.&lt;/p&gt;
+
+&lt;p&gt;We have 2 patient datasets from separate population sources, one is &lt;a href=&quot;https://mimic.physionet.org/&quot;&gt;MIMIC-III&lt;/a&gt; from Beth Israel Deaconess Medical Center, Boston, USA and the other from Uniklinik, Aachen, Germany. &lt;a href=&quot;/2019/12/08/medical-data-challenges.html&quot;&gt;Also see this post&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We first run a binary classification with all the available features, and take the accuracy as the baseline. Various feature selection techniques are then used to find a subset of features that give us the same or improved accuracy than the baseline. Among all the available features, many features may not be discriminatory.&lt;/p&gt;
+
+&lt;p&gt;The feature-set subsets with high classification accuracy are discriminatory and can be used to predict the data source of a randomly drawn patient from the two populations. However, we are equally interested in those subsets that generate accuracy close to chance because classifiers for them cannot distinguish the data source of a randomly-drawn patient. Such patient data can then be used as part of a computational data merging strategy.&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Sparse Matrices - Storage Schemes</title><link href="http://localhost:4000/2019/03/16/sparse-matrices.html" rel="alternate" type="text/html" title="Sparse Matrices - Storage Schemes" /><published>2019-03-16T00:00:00+01:00</published><updated>2019-03-16T00:00:00+01:00</updated><id>http://localhost:4000/2019/03/16/sparse-matrices</id><content type="html" xml:base="http://localhost:4000/2019/03/16/sparse-matrices.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Simple definition&lt;/strong&gt; : A matrix which has “most” of its entries = 0 is a sparse matrix . For a formal definition of sparsity, we consider a ratio of zero valued entries and total number of entries .&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;M =   &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{matrix} 1 &amp; 0 &amp; 0 &amp; 1 \\  0 &amp; 0 &amp; 0 &amp; 1 \\
+ 0 &amp; 0 &amp; 1 &amp; 1 \\
+  0 &amp; 0 &amp; 0 &amp; 1  \end{matrix} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Sparsity = &lt;script type=&quot;math/tex&quot;&gt;\frac{10}{16} = 0.625&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;When sparsity is greater than 0.5 , a matrix is called sparse .&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Storage Schemes for Sparse Matrices&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Usually, we store matrices in “dense” formats, wherein each entry (irrespective of whether it is 0 or non zero) is stored at a location. For the above matrix, there will be 16 units of integer memory allocated. But, since only 6 out of the 16 entries are non zero, can we come up with other ways of storing the matrix which requires lesses space?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Coordinate Format(COO)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In COO format, rather than storing all entries of a matrix, we instead store only the non zero values and their corresponding indices.&lt;/p&gt;
+
+&lt;p&gt;We work with 3 arrays :&lt;/p&gt;
+
+&lt;p&gt;I : to store the row number of non zero entry&lt;/p&gt;
+
+&lt;p&gt;J : to store the column number of non zero entry&lt;/p&gt;
+
+&lt;p&gt;V : to store the non zero value at index i,j&lt;/p&gt;
+
+&lt;p&gt;We can either go “row-wise” and save indices and values or we can go column wise. Following is an example of going row- wise (starting index is 0 as in C++ and not 1 as in MATLAB) : &lt;br /&gt;
+I : 0, 0, 1, 2, 2, 3 &lt;br /&gt;
+J : 0, 3, 3, 2, 3, 3 &lt;br /&gt;
+V : 1, 4, 6, 8, 8, 6&lt;/p&gt;
+
+&lt;p&gt;BUT, what do we observe? We end up needing to store 18 number rather than 16 if we would have saved in dense format. So, when is it economical to use COO rather than dense format?&lt;/p&gt;
+
+&lt;p&gt;Let number of non-zero values be nz and number of zero values b z. For each non zero value, we store its coordinates and the value, meaning 3 units of space fr each non zero value.&lt;/p&gt;
+
+&lt;p&gt;If r and c are numbe rof rows and columns in the matrix, total number of entries in dense format = r*c . If 3nz &amp;lt; rc , then COO format saves us some space.&lt;/p&gt;
+
+&lt;p&gt;Noting ,&lt;br /&gt;
+&lt;em&gt;z+nz = rc&lt;/em&gt; :&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;3(rc - z) &amp;lt; rc&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;z &amp;gt; 2/3(rc)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Which means, if the number of zero values entries is greater than 2/3 times total number of entries, we end up saving space using COO format, rather than dense format.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Compressed Sparse Row Format (CSR)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Another format is CSR where the V and J arrays are the same as that for COO . The difference is for the “I” array. Rather than storing i coordinates for non zero values, we store the coordinate of the “J” array, where a new row starts.&lt;/p&gt;
+
+&lt;p&gt;For the above mentioned matrix M, we get the following arrays : &lt;br /&gt;
+I : 0, 2, 3, 5, 6  &lt;br /&gt;
+J : 0, 3, 3, 2, 3, 3  &lt;br /&gt;
+V : 1, 1, 1, 1, 1, 1&lt;/p&gt;
+
+&lt;p&gt;Note : The last element of the I array will always contain value = number of rows+1 .&lt;/p&gt;
+
+&lt;p&gt;In general, if there are &lt;strong&gt;m&lt;/strong&gt; number of non zero entries in a nxn matrix, COO format will require 3m space and CSR will require 2m + n+1 space .&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Compressed Sparse Column Format&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It is the same as CSR format, except the values are read column wise. We save the row number of each non zero entry (in, say, array I), and the an array (say, J) would contain the indices in the array I where a new row starts .&lt;/p&gt;
+
+&lt;p&gt;I : 0, 2, 0, 1, 2, 3 &lt;br /&gt;
+J : 0, 1, 1, 2, 6 &lt;br /&gt;
+V : 1, 1, 1, 1, 1, 1&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Coding Sparse Matrices</title><link href="http://localhost:4000/2019/03/16/code-sparse.html" rel="alternate" type="text/html" title="Coding Sparse Matrices" /><published>2019-03-16T00:00:00+01:00</published><updated>2019-03-16T00:00:00+01:00</updated><id>http://localhost:4000/2019/03/16/code-sparse</id><content type="html" xml:base="http://localhost:4000/2019/03/16/code-sparse.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Creating CSR format from Dense format :&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A : dense matrix 
+V : non zero values of A
+J : column numbers
+I : indices in J where new rows starts
+isSymm : if A is symmetric, we need not store all non zero values. We can only store “half” of those .&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;createCSR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rows&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cols&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isSymm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;J&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;	
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isSymm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//currI stores the value which will be put in the I array   &lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+				
+				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+				&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+					&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+				
+					&lt;span class=&quot;n&quot;&gt;J&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+				&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;currI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;J&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;J&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+
+	&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//if A is symmetric, j need not iterate over all columns. &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//We only iterate over the lower triangular half of the matrix&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Vm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+				&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+					&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+					&lt;span class=&quot;n&quot;&gt;J&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+				&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;currI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;J&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Matrix Vector Product when matrix is in CSR format&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// considering A is in CSR format , implement matrix vector product Ax = result&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#pragma once
+#include &amp;lt;bits/stdc++.h&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;matrix_vector_product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;J&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isSymm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isSymm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+			&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;	
+
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+		
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Computational Differentiation : Finance</title><link href="http://localhost:4000/2018/07/15/algo-diff-in-finance.html" rel="alternate" type="text/html" title="Computational Differentiation : Finance" /><published>2018-07-15T00:00:00+02:00</published><updated>2018-07-15T00:00:00+02:00</updated><id>http://localhost:4000/2018/07/15/algo-diff-in-finance</id><content type="html" xml:base="http://localhost:4000/2018/07/15/algo-diff-in-finance.html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Computational Differentiation : Use case - Finance&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The aim of this seminar was to pick up a paper, understand it thoroughly and then present it to a group of people, considering they are not experts in the field.
+I was provided the paper &lt;em&gt;Uwe Naumann and Jacques du Toit. Adjoint Algorithmic Differentiation Tool
+Support for Typical Numerical Patterns in Computational Finance. 2014&lt;/em&gt; and I presented the following presentation and report as deliverables.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/algo_diff_finance_presentation.pdf&quot;&gt;Final Presentation (Download link for PDF)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/algo_diff_finance_report.pdf&quot;&gt;Final Report (Download link for PDF)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Note : The course involved writing a review paper. Any code/ computation/ results is that of the authors of the paper.&lt;/p&gt;
+
+&lt;p&gt;References : Uwe Naumann and Jacques du Toit. &lt;em&gt;Adjoint Algorithmic Differentiation Tool
+Support for Typical Numerical Patterns in Computational Finance.&lt;/em&gt; 2014&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry></feed>

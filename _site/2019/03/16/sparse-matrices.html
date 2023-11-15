@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Sparse Matrices - Storage Schemes | Home</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Sparse Matrices - Storage Schemes" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/2019/03/16/sparse-matrices.html" />
+<meta property="og:url" content="http://localhost:4000/2019/03/16/sparse-matrices.html" />
+<meta property="og:site_name" content="Home" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-16T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Sparse Matrices - Storage Schemes" />
+<script type="application/ld+json">
+{"dateModified":"2019-03-16T00:00:00+01:00","datePublished":"2019-03-16T00:00:00+01:00","@type":"BlogPosting","headline":"Sparse Matrices - Storage Schemes","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/16/sparse-matrices.html"},"url":"http://localhost:4000/2019/03/16/sparse-matrices.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Home" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Home</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About Me</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Sparse Matrices - Storage Schemes</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-03-16T00:00:00+01:00" itemprop="datePublished">Mar 16, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<p><strong>Simple definition</strong> : A matrix which has “most” of its entries = 0 is a sparse matrix . For a formal definition of sparsity, we consider a ratio of zero valued entries and total number of entries .</p>
+
+<p><strong>Example</strong></p>
+
+<p>M =   <script type="math/tex">% <![CDATA[
+\begin{matrix} 1 & 0 & 0 & 1 \\  0 & 0 & 0 & 1 \\
+ 0 & 0 & 1 & 1 \\
+  0 & 0 & 0 & 1  \end{matrix} %]]></script></p>
+
+<p>Sparsity = <script type="math/tex">\frac{10}{16} = 0.625</script></p>
+
+<p>When sparsity is greater than 0.5 , a matrix is called sparse .</p>
+
+<p><strong>Storage Schemes for Sparse Matrices</strong></p>
+
+<p>Usually, we store matrices in “dense” formats, wherein each entry (irrespective of whether it is 0 or non zero) is stored at a location. For the above matrix, there will be 16 units of integer memory allocated. But, since only 6 out of the 16 entries are non zero, can we come up with other ways of storing the matrix which requires lesses space?</p>
+
+<p><strong>Coordinate Format(COO)</strong></p>
+
+<p>In COO format, rather than storing all entries of a matrix, we instead store only the non zero values and their corresponding indices.</p>
+
+<p>We work with 3 arrays :</p>
+
+<p>I : to store the row number of non zero entry</p>
+
+<p>J : to store the column number of non zero entry</p>
+
+<p>V : to store the non zero value at index i,j</p>
+
+<p>We can either go “row-wise” and save indices and values or we can go column wise. Following is an example of going row- wise (starting index is 0 as in C++ and not 1 as in MATLAB) : <br />
+I : 0, 0, 1, 2, 2, 3 <br />
+J : 0, 3, 3, 2, 3, 3 <br />
+V : 1, 4, 6, 8, 8, 6</p>
+
+<p>BUT, what do we observe? We end up needing to store 18 number rather than 16 if we would have saved in dense format. So, when is it economical to use COO rather than dense format?</p>
+
+<p>Let number of non-zero values be nz and number of zero values b z. For each non zero value, we store its coordinates and the value, meaning 3 units of space fr each non zero value.</p>
+
+<p>If r and c are numbe rof rows and columns in the matrix, total number of entries in dense format = r*c . If 3nz &lt; rc , then COO format saves us some space.</p>
+
+<p>Noting ,<br />
+<em>z+nz = rc</em> :</p>
+
+<p><em>3(rc - z) &lt; rc</em></p>
+
+<p><em>z &gt; 2/3(rc)</em></p>
+
+<p>Which means, if the number of zero values entries is greater than 2/3 times total number of entries, we end up saving space using COO format, rather than dense format.</p>
+
+<p><strong>Compressed Sparse Row Format (CSR)</strong></p>
+
+<p>Another format is CSR where the V and J arrays are the same as that for COO . The difference is for the “I” array. Rather than storing i coordinates for non zero values, we store the coordinate of the “J” array, where a new row starts.</p>
+
+<p>For the above mentioned matrix M, we get the following arrays : <br />
+I : 0, 2, 3, 5, 6  <br />
+J : 0, 3, 3, 2, 3, 3  <br />
+V : 1, 1, 1, 1, 1, 1</p>
+
+<p>Note : The last element of the I array will always contain value = number of rows+1 .</p>
+
+<p>In general, if there are <strong>m</strong> number of non zero entries in a nxn matrix, COO format will require 3m space and CSR will require 2m + n+1 space .</p>
+
+<p><strong>Compressed Sparse Column Format</strong></p>
+
+<p>It is the same as CSR format, except the values are read column wise. We save the row number of each non zero entry (in, say, array I), and the an array (say, J) would contain the indices in the array I where a new row starts .</p>
+
+<p>I : 0, 2, 0, 1, 2, 3 <br />
+J : 0, 1, 1, 2, 6 <br />
+V : 1, 1, 1, 1, 1, 1</p>
+
+  </div><a class="u-url" href="/2019/03/16/sparse-matrices.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Home</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Home</li><li><a class="u-email" href="mailto:kshikhasingh@gmail.com">kshikhasingh@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/kumarishikha"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kumarishikha</span></a></li><li><a href="https://www.linkedin.com/in/kumari-shikha-61773216a"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">kumari-shikha-61773216a</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
